@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, NavigationExtras, Router } from '@angular/router';
 import { IContacto } from 'src/app/models/contact.interface';
-import { ContactsService } from 'src/app/services/contacts.service';
+import { ContactService } from 'src/app/services/contact.service';
 
 @Component({
   selector: 'app-contacts-page',

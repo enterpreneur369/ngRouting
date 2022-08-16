@@ -1,4 +1,6 @@
 import { Injectable } from '@angular/core';
+import { IContacto } from 'src/app/models/contact.interface';
+import { LISTA_CONTACTOS } from '../mocks/contacts.mock';
 
 @Injectable({
   providedIn: 'root'
@@ -9,7 +11,7 @@ export class ContactService {
 
   constructor() { }
 
-  obtenerContactos(sexo?:string): Promise<IContacto[]> {
+  obtenerContactos(sexo?:string): Promise<IContacto[]> | null {
     if(sexo == "hombre" || sexo == "mujer") {
       let listaContactosFiltrada = this.listaContactos.filter(
         (contacto) => contacto.sexo = sexo);
@@ -19,5 +21,6 @@ export class ContactService {
     } else {
       return Promise.reject("Error en el filtro");
     }
+    return null;
   }
 }
